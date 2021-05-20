@@ -39,7 +39,7 @@ score_joueur2 = 0
 
 
 SepareLigne.x = love.graphics.getWidth()/2 - SepareLigne.largeur/2
-SepareLigne.y = love.graphics.getWidth()/2 - SepareLigne.hauteur/2
+SepareLigne.y = love.graphics.getHeight()/2 - SepareLigne.hauteur/2
 
 function CentreBalle()
   balle.x = love.graphics.getWidth()/2 - balle.largeur/2
