@@ -11,7 +11,7 @@ sound3 = love.audio.newSource("sound/sound3.wav", "static")
 sound4 = love.audio.newSource("sound/sound4.wav", "static")
 sound:setVolume(0.5)
 sound2:setVolume(0.5)
-sound3:setVolume(0.5)
+sound3:setVolume(0.3)
 sound4:setVolume(0.5)
 pad = {}
 pad.x = 0
