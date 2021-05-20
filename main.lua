@@ -1,3 +1,6 @@
+--local img
+--img = love.graphics.newImage("images/tk78.png")
+
 menu = {}
 menu.title = "Bassem"
 menu.title2 = "Tk78"
@@ -5,9 +8,11 @@ menu.title2 = "Tk78"
 sound = love.audio.newSource("sound/sound.wav", "static")
 sound2 = love.audio.newSource("sound/sound2.wav", "static")
 sound3 = love.audio.newSource("sound/sound3.wav", "static")
+sound4 = love.audio.newSource("sound/sound4.wav", "static")
 sound:setVolume(0.5)
-sound2:setVolume(0.7)
-sound3:setVolume(0.7)
+sound2:setVolume(0.5)
+sound3:setVolume(0.5)
+sound4:setVolume(0.5)
 pad = {}
 pad.x = 0
 pad.y = 0
@@ -39,7 +44,7 @@ score_joueur2 = 0
 
 
 SepareLigne.x = love.graphics.getWidth()/2 - SepareLigne.largeur/2
-SepareLigne.y = love.graphics.getHeight()/2 - SepareLigne.hauteur/2
+SepareLigne.y = love.graphics.getWidth()/2 - SepareLigne.hauteur/2
 
 function CentreBalle()
   balle.x = love.graphics.getWidth()/2 - balle.largeur/2
@@ -76,7 +81,7 @@ function love.update(dt)
     love.audio.play(sound3)
   elseif balle.y < 0 then
     balle.vitesse_y = -balle.vitesse_y
-    love.audio.play(sound3)
+    love.audio.play(sound4)
   elseif balle.x > love.graphics.getWidth() - balle.hauteur then
     CentreBalle()
     score_joueur1 = score_joueur1 + 1
@@ -96,9 +101,14 @@ function love.update(dt)
   if balle.x + balle.largeur > pad2.x then
     if balle.y + balle.hauteur > pad2.y and balle.y < pad2.y + pad2.hauteur then
       balle.vitesse_x = -balle.vitesse_x
+  
     end
   end
-    
+  --[[if score_joueur1  > 5 then
+    print("Le joueurs 1 a gagner "..score_joueur1)
+  elseif score_joueur2  > 5 then
+    print("Le joueurs 2 a gagner "..score_joueur2)
+end --]]
 end
 
 
@@ -112,6 +122,7 @@ function love.draw()
   
   love.graphics.rectangle("fill",balle.x,balle.y,balle.largeur,balle.hauteur)
   
-  love.graphics.print("score joueur1: "..score_joueur1,290,0)
-  love.graphics.print("score joueur2: "..score_joueur2,410,0)
+  love.graphics.print("score bassem: "..score_joueur1,290,0)
+  love.graphics.print("score tk78: "..score_joueur2,410,0)
+  --love.graphics.draw(img,1,1)
 end
