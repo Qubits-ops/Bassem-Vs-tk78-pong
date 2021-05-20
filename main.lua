@@ -31,8 +31,8 @@ balle.x = 400
 balle.y = 300
 balle.largeur = 20
 balle.hauteur = 20
-balle.vitesse_x = 1
-balle.vitesse_y = 1
+balle.vitesse_x = 2
+balle.vitesse_y = 2
 
 score_joueur1 = 0
 score_joueur2 = 0
@@ -44,8 +44,8 @@ SepareLigne.y = love.graphics.getHeight()/2 - SepareLigne.hauteur/2
 function CentreBalle()
   balle.x = love.graphics.getWidth()/2 - balle.largeur/2
   balle.y = love.graphics.getHeight()/2 - balle.hauteur/2
-  balle.vitesse_x = 1
-  balle.vitesse_y = 1
+  balle.vitesse_x = 2
+  balle.vitesse_y = 2
   
 end
 
@@ -59,14 +59,14 @@ end
 function love.update(dt)
   --raquette1
   if love.keyboard.isDown("down") and pad.y < love.graphics.getHeight() - pad.hauteur then
-    pad.y = pad.y + 1
+    pad.y = pad.y + 2
   elseif love.keyboard.isDown("up") and pad.y > 0 then
-    pad.y = pad.y - 1
+    pad.y = pad.y - 2
   end
   if love.keyboard.isDown("a") and pad2.y < love.graphics.getHeight() - pad2.hauteur then
-    pad2.y = pad2.y + 1
+    pad2.y = pad2.y + 2
   elseif love.keyboard.isDown("e") and pad2.y > 0 then
-    pad2.y = pad2.y - 1
+    pad2.y = pad2.y - 2
   end
   balle.x = balle.x + balle.vitesse_x
   balle.y = balle.y + balle.vitesse_y 
